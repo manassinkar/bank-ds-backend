@@ -7,9 +7,8 @@ let bcrypt = require("bcryptjs")
 
 const http = require('http').Server(app);
 const io = require('socket.io')(http);
-var port = process.env.PORT || 8080;
+var port = process.env.PORT || 3000;
 const server = http.listen(port, function() {
-    console.log("Server Started on port 3000");
     mongoose.connect("mongodb+srv://admin:admin@bank-mafeq.mongodb.net/test?retryWrites=true&w=majority",{ useUnifiedTopology: true,useNewUrlParser: true, useCreateIndex: true },(err) =>
     {
         if(err)
